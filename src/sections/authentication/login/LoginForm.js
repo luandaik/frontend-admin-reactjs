@@ -23,8 +23,8 @@ export default function LoginForm() {
   const [showPassword, setShowPassword] = useState(false);
 
   const LoginSchema = Yup.object().shape({
-    email: Yup.string().email('Email must be a valid email address').required('Email is required'),
-    password: Yup.string().required('Password is required')
+    email: Yup.string().email('Địa chỉ emmail phải là địa chỉ email hợp lệ').required('Email không được trống'),
+    password: Yup.string().required('Password không được trống')
   });
 
   const formik = useFormik({
@@ -53,7 +53,7 @@ export default function LoginForm() {
             fullWidth
             autoComplete="username"
             type="email"
-            label="Email address"
+            label="Địa chỉ email"
             {...getFieldProps('email')}
             error={Boolean(touched.email && errors.email)}
             helperText={touched.email && errors.email}
@@ -63,7 +63,7 @@ export default function LoginForm() {
             fullWidth
             autoComplete="current-password"
             type={showPassword ? 'text' : 'password'}
-            label="Password"
+            label="Mật khẩu"
             {...getFieldProps('password')}
             InputProps={{
               endAdornment: (
@@ -82,12 +82,12 @@ export default function LoginForm() {
         <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ my: 2 }}>
           <FormControlLabel
             control={<Checkbox {...getFieldProps('remember')} checked={values.remember} />}
-            label="Remember me"
+            label="Ghi nhớ"
           />
 
-          <Link component={RouterLink} variant="subtitle2" to="#" underline="hover">
+          {/* <Link component={RouterLink} variant="subtitle2" to="#" underline="hover">
             Forgot password?
-          </Link>
+          </Link> */}
         </Stack>
 
         <LoadingButton
@@ -97,7 +97,7 @@ export default function LoginForm() {
           variant="contained"
           loading={isSubmitting}
         >
-          Login
+          Đăng nhập
         </LoadingButton>
       </Form>
     </FormikProvider>

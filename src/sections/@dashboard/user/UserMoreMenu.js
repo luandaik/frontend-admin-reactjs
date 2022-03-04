@@ -16,7 +16,7 @@ import RestClient from "../../../API/RestClient";
 // ----------------------------------------------------------------------
 
 export default function UserMoreMenu(props) {
-  const { id,deleteComic } = props;
+  const { id,deleteComic,editComic,dataComic } = props;
   const ref = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
   const handleDeleteItem = () => {
@@ -30,6 +30,9 @@ export default function UserMoreMenu(props) {
         console.log(err);
       });
   };
+  const openEditModal = ()=>{
+    editComic(dataComic);
+  }
   return (
     <>
       <IconButton ref={ref} onClick={() => setIsOpen(true)}>
@@ -66,6 +69,7 @@ export default function UserMoreMenu(props) {
             <Iconify icon="eva:edit-fill" width={24} height={24} />
           </ListItemIcon>
           <ListItemText
+            onClick={openEditModal}
             primary="Sửa"
             primaryTypographyProps={{ variant: "body2" }}
           />

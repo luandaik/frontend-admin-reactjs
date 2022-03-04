@@ -40,30 +40,30 @@ const ContentStyle = styled('div')(({ theme }) => ({
 
 export default function Login() {
   return (
-    <RootStyle title="Login | Minimal-UI">
-      <AuthLayout>
+    <RootStyle title="Login | Comicsvn">
+      {/* <AuthLayout>
         Don’t have an account? &nbsp;
         <Link underline="none" variant="subtitle2" component={RouterLink} to="/register">
           Get started
         </Link>
-      </AuthLayout>
+      </AuthLayout> */}
 
-      <SectionStyle sx={{ display: { xs: 'none', md: 'flex' } }}>
+      {/* <SectionStyle sx={{ display: { xs: 'none', md: 'flex' } }}>
         <Typography variant="h3" sx={{ px: 5, mt: 10, mb: 5 }}>
           Hi, Welcome Back
         </Typography>
         <img src="/static/illustrations/illustration_login.png" alt="login" />
-      </SectionStyle>
+      </SectionStyle> */}
 
       <Container maxWidth="sm">
         <ContentStyle>
           <Stack sx={{ mb: 5 }}>
             <Typography variant="h4" gutterBottom>
-              Sign in to Minimal
+              Đăng nhập Comicsvn
             </Typography>
-            <Typography sx={{ color: 'text.secondary' }}>Enter your details below.</Typography>
+            {/* <Typography sx={{ color: 'text.secondary' }}>Enter your details below.</Typography> */}
           </Stack>
-          <AuthSocial />
+          {/* <AuthSocial /> */}
 
           <LoginForm />
 
