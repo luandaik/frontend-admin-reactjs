@@ -204,7 +204,7 @@ export default function User() {
     data.append("images[]", image);
 
     axios
-      .post("http://localhost:8000/api/images", data, {
+      .post("https://api.restapi-vs.top/api/images", data, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

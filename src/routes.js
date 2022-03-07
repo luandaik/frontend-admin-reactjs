@@ -21,7 +21,7 @@ export default function Router() {
     if(!usernameLogin){
       navigate("/login", { replace: true });
     }else{
-      navigate("/", { replace: true });
+      navigate("/dashboard", { replace: true });
     }
     
   },[usernameLogin]);
@@ -31,6 +31,7 @@ export default function Router() {
       path: '/dashboard',
       element:<DashboardLayout />,
       children: [
+       
         { path: 'app', element: <User /> },
         { path: 'comic', element: <User /> },
         // { path: 'app', element: <User /> },
@@ -42,7 +43,7 @@ export default function Router() {
       path: '/',
       element: <LogoOnlyLayout />,
       children: [
-        { path: '/', element:  <Navigate to="/dashboard/app" />},
+         { path: '/', element:  <Login />},
         { path: 'login', element: <Login /> },
         // { path: 'register', element: <Register /> },
         { path: '404', element: <NotFound /> },

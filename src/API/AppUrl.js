@@ -1,5 +1,5 @@
 class AppUrl{
-    static BaseUrl = 'http://127.0.0.1:8000/api/';
+    static BaseUrl = 'https://api.restapi-vs.top/api/';
     
     static ContactSend = `${this.BaseUrl}contactsend`;
     static HomeComicData = `${this.BaseUrl}getcomichome`;
